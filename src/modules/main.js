@@ -3,5 +3,5 @@
  */
 angular.module('main', [
   'app.states.home',
-  'app.states.two'
+  'app.states.details'
 ]);
