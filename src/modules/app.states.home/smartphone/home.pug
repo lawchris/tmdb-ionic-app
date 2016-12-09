@@ -1,5 +1,24 @@
-ion-view.view-home(
-  view-title="{{ 'STATES.HOME.TITLE' | translate }}",
-  translate-namespace="STATES.HOME")
-  ion-content
-    ng-include(src="'modules/app.states.home/smartphone/content.home.html'")
+ion-view.view-home(view-title="Acceuil")
+  ion-header.bar-subheader.item-input-inset
+    label.class.item-input-wrapper
+      i.icon.ion-ios-search.placeholder-icon
+      input(
+        type="search",
+        ng-model="search.query",
+        placeholder="Rechercher")
+    button.button.button-clear.button-positive(
+      ng-disabled="search.query.length < 3",
+      on-tap="homeController.search()")
+      | OK
+  ion-content.has-subheader
+    ion-list
+      ion-item.item-divider Résultat
+      ion-item(
+        ng-if="search.results.length < 1")
+        | No Results !
+      ion-item(
+        ng-repeat="result in search.results",
+        ui-state-params="{ id: result.id}",
+        ui-state="STATE_DETAILS").item-icon-right
+        | {{ result.title }}
+        i.icon.ion-ios-arrow-right
