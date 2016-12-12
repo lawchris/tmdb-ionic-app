@@ -7,18 +7,6 @@
       "excludePlugins": [],
       "constants": {}
     },
-    "test": {
-      "excludePlugins": [],
-      "constants": {}
-    },
-    "preprod": {
-      "excludePlugins": [],
-      "constants": {}
-    },
-    "qa": {
-      "excludePlugins": [],
-      "constants": {}
-    },
     "prod": {
       "excludePlugins": [
         "cordova-plugin-console"
@@ -28,38 +16,27 @@
   },
   "apps": {
     "default": {
-      "name": "App",
-      "id": "id.goes.here",
+      "name": "Mooviz",
+      "id": "lucas.polytech.mmdo.projet",
       "constants": {
         "I18N": {
           "LOCALES": ["en-US", "fr-FR"],
-          "DEFAULT": "en-US"
+          "DEFAULT": "fr-FR"
         }
       },
       "builds": {
         "dev": {
           "constants": {
-            "API_SERVER_URL": ""
-          }
-        },
-        "test": {
-          "constants": {
-            "API_SERVER_URL": ""
-          }
-        },
-        "preprod": {
-          "constants": {
-            "API_SERVER_URL": ""
-          }
-        },
-        "qa": {
-          "constants": {
-            "API_SERVER_URL": ""
+            "API_SERVER_URL": "https://api.themoviedb.org",
+            "API_IMAGES_URL": "https://image.tmdb.org",
+            "API_KEY" : "$API_KEY"
           }
         },
         "prod": {
           "constants": {
-            "API_SERVER_URL": ""
+            "API_SERVER_URL": "https://api.themoviedb.org",
+            "API_IMAGES_URL": "https://image.tmdb.org",
+            "API_KEY" : "$API_KEY"
           }
         }
       }
