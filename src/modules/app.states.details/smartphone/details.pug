@@ -1,3 +1,5 @@
 ion-view.view-details(view-title="{{ movieData.title }}")
   ion-content
-    h1 {{ movieData.overview }}
+    h4 {{ movieData.overview || "Pas de description"}}
+    img.full-image(ng-if="movieData.poster_path", ng-src='{{ movieData.poster_path}}')
+

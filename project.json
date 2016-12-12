@@ -29,14 +29,14 @@
           "constants": {
             "API_SERVER_URL": "https://api.themoviedb.org",
             "API_IMAGES_URL": "https://image.tmdb.org",
-            "API_KEY" : "$API_KEY"
+            "API_KEY" : "77b9fb0b14c12d2ea941cfc268e0156a"
           }
         },
         "prod": {
           "constants": {
             "API_SERVER_URL": "https://api.themoviedb.org",
             "API_IMAGES_URL": "https://image.tmdb.org",
-            "API_KEY" : "$API_KEY"
+            "API_KEY" : "77b9fb0b14c12d2ea941cfc268e0156a"
           }
         }
       }

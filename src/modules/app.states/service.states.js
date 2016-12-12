@@ -21,6 +21,11 @@
       return httpService.get('/3/movie/' + id, {
         language: i18nService.getLocale(),
         api_key: API_KEY
+      }).then(function(movieData){
+        if(movieData.poster_path){
+          movieData.poster_path = API_IMAGES_URL + "/t/p/w500" + movieData.poster_path;
+        }
+        return movieData;
       });
     };
 
