@@ -15,7 +15,7 @@ ion-view(view-title="Accueil")
       ion-item.item-divider Résultats
       ion-item(ng-if="search.results.length < 1") Aucun résultat
       ion-item.item-icon-right(
-        ng-repeat="result in search.results",
+        ng-repeat="result in search.results | orderBy:'-release_date'",
         ui-state-params="{ movieId: result.id }",
         ui-state="STATE_DETAILS")
         | {{ result.title }}

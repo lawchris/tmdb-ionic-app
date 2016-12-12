@@ -1,0 +1,6 @@
+h4 {{ release_date | moment:'LL' }}
+p {{ overview }}
+a/button.button-small.button-outline.button-assertive(
+  ui-state-params="{ movieId: id }",
+  ui-state="STATE_DETAILS")
+  | En voir plus...
