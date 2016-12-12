@@ -4,25 +4,39 @@
 (function (module) {
   'use strict';
 
-  function StatesService($q, httpService, i18nService) {
+  function StatesService($q, httpService, i18nService, API_IMAGES_URL, API_KEY) {
     var service = this;
 
     service.search = function(query){
-      console.log(query);
-      return $q.resolve([
-        {title: 'Jaws', id: 1},
-        {title: 'Jaws 2', id: 2}
-      ]);
+      return httpService.get('/3/search/movie', {
+        language: i18nService.getLocale(),
+        api_key: API_KEY,
+        query: query
+      }).then(function(data) {
+        return data.results;
+      });
     };
 
     service.getMovie = function(id){
-      return $q.resolve({title: 'Jaws', id:526 , description:"Brosse les toi !"});
+      return httpService.get('/3/movie/' + id, {
+        language: i18nService.getLocale(),
+        api_key: API_KEY
+      });
+    };
+
+    service.discover = function(){
+      return httpService.get('/3/discover/movie', {
+        'release_data.lte': moment().add(3, 'month').format('YYYY-MM-DD'),
+        'release_data.gte': moment().format('YYYY-MM-DD'),
+        language: i18nService.getLocale(),
+        api_key: API_KEY
+      });
     };
     /**
      * Resolve states data.
      * @return {Promise} Passing an object.
      */
-    service.resolveStatesData = function () {
+    service.resolveStatesData = function (){
       return httpService.all({
         // Force loading of dynamic locale using the determined one.
         locale: i18nService.setLocale()
@@ -34,6 +48,8 @@
     '$q',
     'httpService',
     'i18nService',
+    'API_IMAGES_URL',
+    'API_KEY',
     StatesService
   ]);
 

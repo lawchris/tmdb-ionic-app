@@ -16,9 +16,9 @@ ion-view.view-home(view-title="Acceuil")
       ion-item(
         ng-if="search.results.length < 1")
         | No Results !
-      ion-item(
-        ng-repeat="result in search.results",
+      ion-item.item-icon-right(
+        ng-repeat="result in search.results | orderBy:'-release_date'",
         ui-state-params="{ id: result.id}",
-        ui-state="STATE_DETAILS").item-icon-right
+        ui-state="STATE_DETAILS")
         | {{ result.title }}
         i.icon.ion-ios-arrow-right

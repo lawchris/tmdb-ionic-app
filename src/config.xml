@@ -9,7 +9,8 @@
   <name>$PACKAGE_NAME</name>
   <description>$PACKAGE_DESCRIPTION</description>
   <content src="smartphone.html"/>
-  <access origin="tel:*" launch-external="yes"/>
+  <access origin="https://image.tmbd.org"/>
+  <preference name="Orientation" value="portrait"/>
   <preference name="BackupWebStorage" value="none"/>
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="HideKeyboardFormAccessoryBar" value="true"/>
@@ -34,9 +35,5 @@
     <splash src="assets/resources/$APP/android/splash/splash-port-mdpi.png" density="port-mdpi"/>
     <splash src="assets/resources/$APP/android/splash/splash-port-hdpi.png" density="port-hdpi"/>
     <splash src="assets/resources/$APP/android/splash/splash-port-xhdpi.png" density="port-xhdpi"/>
-    <splash src="assets/resources/$APP/android/splash/splash-land-ldpi.png" density="land-ldpi"/>
-    <splash src="assets/resources/$APP/android/splash/splash-land-mdpi.png" density="land-mdpi"/>
-    <splash src="assets/resources/$APP/android/splash/splash-land-hdpi.png" density="land-hdpi"/>
-    <splash src="assets/resources/$APP/android/splash/splash-land-xhdpi.png" density="land-xhdpi"/>
   </platform>
 </widget>
